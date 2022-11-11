@@ -20,7 +20,7 @@ const Auth = () => {
   const [isSignup, setIsSignup] = useState(false);
 
   const [formData, setFormData] = useState(initialState);
-  console.log(formData);
+ 
   const classes = useStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
