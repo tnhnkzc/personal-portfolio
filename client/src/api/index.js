@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "https://tunahankuzucu.herokuapp.com/" });
+const API = axios.create({ baseURL: "https://personal-portfolio-u11k.onrender.com/" });
 
 export const fetchProjects = () => API.get("/projects");
 
