@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Container, Typography, Grow, Grid } from "@mui/material";
+import { Container, Typography, Grow } from "@mui/material";
 import useStyles from "./styles";
 import javascript from "../../images/javascript.png";
 import nodejs from "../../images/nodejs.png";
@@ -10,7 +10,6 @@ import github from "../../images/github.png";
 import gitbash from "../../images/gitbash.png";
 import html from "../../images/html.png";
 import css from "../../images/css.png";
-import expressjs from "../../images/expressjs.png";
 import mysql from "../../images/mysql.png";
 import adobexd from "../../images/adobexd.png";
 import WebFont from "webfontloader";

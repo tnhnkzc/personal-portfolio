@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     height: "150px",
   },
   toolBar: {
-    background: "transparent !important",
+    background: "#EEA47F !important",
     width: "100%",
     height: "150px",
     display: "flex !important",
@@ -15,13 +15,12 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
   },
   logo: {
-    width: "auto",
-    height: "150px",
+    width: "200px",
     position: "relative",
     top: "20px",
     [theme.breakpoints.down("sm")]: {
-      width: "auto",
-      height: "100px",
+      width: "150px",
+      left: "20px",
     },
   },
   logoContainer: {
@@ -43,14 +42,16 @@ export default makeStyles((theme) => ({
   buttonContainers: {
     width: "33% !important",
   },
+
   navbarLinks: {
-    color: "beige !important",
+    color: "black !important",
   },
+  
 
   // Hamburger Menu Styles
 
   hamburgerMenu: {
-    bottom: "5px",
+    right: "20px",
     [theme.breakpoints.up("sm")]: {
       visibility: "hidden",
     },
@@ -60,14 +61,17 @@ export default makeStyles((theme) => ({
   },
   chevronIconDiv: {
     width: "100%",
+    background: "#EEA47F !important",
+    color: "black",
   },
   hamburgerMenuContainer: {
     display: "flex !important",
     flexDirection: "column",
     height: "100%",
+    background: "#EEA47F !important",
   },
   hamburgerMenuIcon: {
-    color: "beige",
+    color: "#F96167",
     marginRight: "10px",
   },
   hmbrgMenuUserContainer: {

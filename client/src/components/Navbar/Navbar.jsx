@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MenuIcon from "@material-ui/icons/Menu";
-import logo12 from "../../images/logo12.png";
+import logo from "../../images/logo.png";
 import useStyles from "./styles";
 import WebFont from "webfontloader";
 import BasicMenu from "../LanguageButton/LanguageButton";
@@ -121,7 +121,7 @@ function Navbar() {
               <img
                 component={Link}
                 to="/"
-                src={logo12}
+                src={logo}
                 alt="logo"
                 className={classes.logo}
               />

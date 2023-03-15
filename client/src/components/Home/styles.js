@@ -116,11 +116,9 @@ export default makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-  },
-  softSkillsContainer: {
     marginTop: "50px",
   },
-  softSkillsListContainer: {},
+  
   softSkillsList: {
     padding: 0,
   },
