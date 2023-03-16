@@ -72,7 +72,7 @@ const Home = () => {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Droid Sans", "Chilanka", "Grape Nuts"],
+        families: ["Droid Sans", "Comfortaa", "Rubik Glitch"],
       },
     });
   }, []);
@@ -90,23 +90,23 @@ const Home = () => {
             <Container>
               <Typography
                 className={classes.title}
-                style={{ fontFamily: "Grape Nuts" }}
+                style={{ fontFamily: "Rubik Glitch" }}
                 variant="h3"
-                color="beige"
+                color="black"
               >
                 {t("homePage.title")}
-                <span style={{ color: "#ffcc00" }}> Tunahan Kuzucu.</span>
+                <span style={{ color: "#F96167" }}> Tunahan Kuzucu.</span>
               </Typography>
             </Container>
             <Container>
               <Typography
                 className={classes.title}
-                style={{ fontFamily: "Grape Nuts" }}
+                style={{ fontFamily: "Comfortaa" }}
                 variant="h3"
-                color="beige"
+                color="black"
               >
                 {t("homePage.description.part1")}{" "}
-                <span style={{ color: "#ffcc00" }}>
+                <span style={{ color: "#F96167" }}>
                   {t("homePage.description.part2")}{" "}
                 </span>
                 {t("homePage.description.part3")}
@@ -115,7 +115,7 @@ const Home = () => {
           </Container>
         </motion.div>
 
-        {/* About Message Container */}
+        {/* About Message Container 
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -138,7 +138,7 @@ const Home = () => {
               {t("aboutMessage.part2")}
             </Typography>
           </Container>
-        </motion.div>
+        </motion.div>*/}
 
         {/* Languages and Tools Container */}
         <motion.div
