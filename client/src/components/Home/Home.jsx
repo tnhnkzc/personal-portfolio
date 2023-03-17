@@ -80,49 +80,54 @@ const Home = () => {
 
   return (
     <Grow in>
-      <Container className={classes.mainContainer}>
-        {/* Entry Message Container */}
-        <section className="h-screen w-full flex content-center items-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      >
+        <section className="h-screen flex flex-col items-center justify-center">
+          <Typography
+            className={classes.title}
+            style={{ fontFamily: "Rubik Glitch" }}
+            variant="h3"
           >
-            <Container className={classes.entryContainer}>
-              <Container>
-                <Typography
-                  className={classes.title}
-                  style={{ fontFamily: "Rubik Glitch" }}
-                  variant="h3"
-                >
-                  {t("homePage.title")}
-                  <span style={{ color: "#F96167" }}> Tunahan Kuzucu.</span>
-                </Typography>
-              </Container>
-              <Container>
-                <Typography
-                  className={classes.title}
-                  style={{ fontFamily: "Comfortaa" }}
-                  variant="h3"
-                  color="black"
-                >
-                  {t("homePage.description.part1")}{" "}
-                  <span className="bg-red-400 rounded-full border-red-400 border-2">
-                    {t("homePage.description.part2")}{" "}
-                  </span>
-                  {t("homePage.description.part3")}
-                </Typography>
-              </Container>
-            </Container>
-          </motion.div>
+            {t("homePage.title")}
+            <span style={{ color: "#F96167" }}> Tunahan Kuzucu.</span>
+          </Typography>
+          <Typography
+            className={classes.title}
+            style={{ fontFamily: "Comfortaa" }}
+            variant="h3"
+            color="black"
+          >
+            {t("homePage.description.part1")}{" "}
+            <span className="bg-red-400 rounded-full border-red-400 border-2">
+              {t("homePage.description.part2")}{" "}
+            </span>
+            {t("homePage.description.part3")}
+          </Typography>
         </section>
-        <section className="h-screen w-full flex flex-col items-center">
-          <Projects></Projects>
-        </section>
-      <section className="h-screen w-full flex content-center">
-          <Contact></Contact>
-        </section>
-      </Container>
+      </motion.div>
+
+      {/*    <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          <Container className="h-screen flex flex-col items-center content-center">
+            <Projects></Projects>
+          </Container>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          <Container className="h-screen flex flex-col items-center content-center">
+            <Contact></Contact>
+          </Container>
+        </motion.div>
+      </Container> */}
       {/* About Message Container 
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}

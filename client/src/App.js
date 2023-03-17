@@ -3,6 +3,8 @@ import { Container } from "@mui/material";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { BrowserRouter } from "react-router-dom";
 import useStyles from "./styles";
@@ -14,15 +16,13 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Container id="home" className={classes.htmlContainer}>
-          <Navbar />
-          <Container className={classes.homeContainer} maxidth="lg">
-            <Sidebar />
-            <AnimatedRoutes />
-          </Container>
-          <Footer />
-          <ScrollToTop />
-        </Container>
+        <Navbar />
+        <Sidebar />
+        <AnimatedRoutes />
+        <Projects />
+        <Contact />
+        <Footer />
+        <ScrollToTop />
       </BrowserRouter>
     </>
   );

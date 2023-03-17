@@ -37,6 +37,64 @@ const Projects = ({ setCurrentId }) => {
   ) : (
     <>
       <Grow in>
+        <section className="h-screen flex flex-col items-center justify-between">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Container className="flex">
+              <Typography
+                variant="h3"
+                className="text-black"
+                style={{ fontFamily: "Rubik Glitch" }}
+              >
+                {t("projectsPage.title")}
+              </Typography>
+                {user && (
+                  <Button
+                    className={classes.addButton}
+                    variant="contained"
+                    style={{
+                      background: "#330033",
+                    }}
+                  >
+                    <Typography
+                      component={Link}
+                      to="/projects/createProject"
+                      className={classes.addButtonText}
+                      style={{ fontFamily: "Droid Sans", color: "beige" }}
+                    >
+                      Add a Project
+                    </Typography>
+                  </Button>
+                )}
+            </Container>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
+            <Grid
+              className={classes.projectsGrid}
+              container
+              justify="space-between"
+              alignItems="stretch"
+              spacing={8}
+              sm={12}
+            >
+              {projects.map((project) => {
+                return (
+                  <Grid key={project._id} item xs={12} sm={6}>
+                    <Project setCurrentId={setCurrentId} project={project} />
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </motion.div>
+        </section>
+        {/*
         <Container className={classes.projectsContainer}>
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -72,8 +130,8 @@ const Projects = ({ setCurrentId }) => {
                 )}
               </Container>
             </Container>
-          </motion.div>
-          <motion.div
+          </motion.div> */}
+        {/* <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
@@ -94,8 +152,7 @@ const Projects = ({ setCurrentId }) => {
                 );
               })}
             </Grid>
-          </motion.div>
-        </Container>
+          </motion.div>*/}
       </Grow>
     </>
   );

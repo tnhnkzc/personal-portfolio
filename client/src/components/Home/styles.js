@@ -5,6 +5,7 @@ export default makeStyles((theme) => ({
     display: "flex !important",
     flexDirection: "column",
     justifyContent: "center",
+    alignItems: "center",
     width: "100% !important",
   },
   // Entry Message Container Styling

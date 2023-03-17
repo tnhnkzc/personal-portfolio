@@ -43,7 +43,7 @@ const Project = ({ project, setCurrentId }) => {
   }, []);
 
   return (
-    <Card className={classes.mainContainer}>
+    <Card className="w-3/4 h-3/4">
       <CardMedia className={classes.media} image={project.selectedFile} />
       <CardContent
         style={{
@@ -53,7 +53,7 @@ const Project = ({ project, setCurrentId }) => {
         <Typography
           className={classes.projectTitle}
           style={{ fontFamily: "Comfortaa", color: "beige" }}
-          variant="h3"
+          variant="h5"
           color="textPrimary"
         >
           {project.title}
