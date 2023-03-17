@@ -25,7 +25,7 @@ const Projects = ({ setCurrentId }) => {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Droid Sans", "Chilanka", "Grape Nuts"],
+        families: ["Droid Sans", "Rubik Glitch", "Grape Nuts"],
       },
     });
   }, []);
@@ -46,8 +46,8 @@ const Projects = ({ setCurrentId }) => {
             <Container className={classes.titleContainer}>
               <Typography
                 variant="h3"
-                className={classes.title}
-                style={{ fontFamily: "Chilanka" }}
+                className="text-black"
+                style={{ fontFamily: "Rubik Glitch" }}
               >
                 {t("projectsPage.title")}
               </Typography>

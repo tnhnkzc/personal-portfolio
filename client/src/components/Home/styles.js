@@ -5,11 +5,7 @@ export default makeStyles((theme) => ({
     display: "flex !important",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
     width: "100% !important",
-    height: "100% !important",
-    marginTop: "200px",
-    textAlign: "center",
   },
   // Entry Message Container Styling
   entryContainer: {
@@ -20,7 +16,6 @@ export default makeStyles((theme) => ({
     width: "100% !important",
   },
   title: {
-    color: "beige",
     textAlign: "center",
     [theme.breakpoints.down("xs")]: {
       fontSize: "36px !important",

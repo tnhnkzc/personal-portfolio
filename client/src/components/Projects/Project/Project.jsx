@@ -37,7 +37,7 @@ const Project = ({ project, setCurrentId }) => {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Droid Sans", "Chilanka", "Grape Nuts"],
+        families: ["Droid Sans", "Comfortaa", "Montserrat"],
       },
     });
   }, []);
@@ -52,21 +52,21 @@ const Project = ({ project, setCurrentId }) => {
       >
         <Typography
           className={classes.projectTitle}
-          style={{ fontFamily: "Chilanka", color: "beige" }}
+          style={{ fontFamily: "Comfortaa", color: "beige" }}
           variant="h3"
           color="textPrimary"
         >
           {project.title}
         </Typography>
         <Typography
-          style={{ fontFamily: "Droid Sans", color: "beige" }}
+          style={{ fontFamily: "Montserrat", color: "beige" }}
           variant="body1"
           color="white"
         >
           Description: {project.description}
         </Typography>
         <Typography
-          style={{ fontFamily: "Droid Sans", color: "beige" }}
+          style={{ fontFamily: "Montserrat", color: "beige" }}
           variant="body1"
           color="white"
         >

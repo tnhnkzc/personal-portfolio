@@ -14,7 +14,8 @@ import mysql from "../../images/mysql.png";
 import adobexd from "../../images/adobexd.png";
 import WebFont from "webfontloader";
 import { motion } from "framer-motion";
-
+import Projects from "../Projects/Projects.jsx";
+import Contact from "../Contact/Contact.jsx";
 const Home = () => {
   // Styles
   const classes = useStyles();
@@ -81,41 +82,48 @@ const Home = () => {
     <Grow in>
       <Container className={classes.mainContainer}>
         {/* Entry Message Container */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        >
-          <Container className={classes.entryContainer}>
-            <Container>
-              <Typography
-                className={classes.title}
-                style={{ fontFamily: "Rubik Glitch" }}
-                variant="h3"
-                color="black"
-              >
-                {t("homePage.title")}
-                <span style={{ color: "#F96167" }}> Tunahan Kuzucu.</span>
-              </Typography>
+        <section className="h-screen w-full flex content-center items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+          >
+            <Container className={classes.entryContainer}>
+              <Container>
+                <Typography
+                  className={classes.title}
+                  style={{ fontFamily: "Rubik Glitch" }}
+                  variant="h3"
+                >
+                  {t("homePage.title")}
+                  <span style={{ color: "#F96167" }}> Tunahan Kuzucu.</span>
+                </Typography>
+              </Container>
+              <Container>
+                <Typography
+                  className={classes.title}
+                  style={{ fontFamily: "Comfortaa" }}
+                  variant="h3"
+                  color="black"
+                >
+                  {t("homePage.description.part1")}{" "}
+                  <span className="bg-red-400 rounded-full border-red-400 border-2">
+                    {t("homePage.description.part2")}{" "}
+                  </span>
+                  {t("homePage.description.part3")}
+                </Typography>
+              </Container>
             </Container>
-            <Container>
-              <Typography
-                className={classes.title}
-                style={{ fontFamily: "Comfortaa" }}
-                variant="h3"
-                color="black"
-              >
-                {t("homePage.description.part1")}{" "}
-                <span style={{ color: "#F96167" }}>
-                  {t("homePage.description.part2")}{" "}
-                </span>
-                {t("homePage.description.part3")}
-              </Typography>
-            </Container>
-          </Container>
-        </motion.div>
-
-        {/* About Message Container 
+          </motion.div>
+        </section>
+        <section className="h-screen w-full flex flex-col items-center">
+          <Projects></Projects>
+        </section>
+      <section className="h-screen w-full flex content-center">
+          <Contact></Contact>
+        </section>
+      </Container>
+      {/* About Message Container 
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -140,7 +148,7 @@ const Home = () => {
           </Container>
         </motion.div>*/}
 
-        {/* Languages and Tools Container */}
+      {/* Languages and Tools Container 
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -200,9 +208,9 @@ const Home = () => {
               </Typography>
             </Container>
           </Container>
-        </motion.div>
+        </motion.div>*/}
 
-        {/* Skills and Competences Container */}
+      {/* Skills and Competences Container 
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -210,7 +218,7 @@ const Home = () => {
           style={{ marginTop: "50px", marginBottom: "50px" }}
         >
           <Container className={classes.skillsContainer}>
-            {/* Competences */}
+            {/* Competences 
             <Container className={classes.competencesContainer}>
               <Container className={classes.competenceTitle}>
                 <Typography
@@ -260,7 +268,7 @@ const Home = () => {
               </Container>
             </Container>
 
-            {/* Soft Skills */}
+            {/* Soft Skills 
             <Container className={classes.softSkillsContainer}>
               <Container className={classes.softSkillsTitle}>
                 <Typography
@@ -351,8 +359,7 @@ const Home = () => {
               </Container>
             </Grid>
           </Container>
-        </motion.div>
-      </Container> */}
+        </motion.div>*/}
     </Grow>
   );
 };
