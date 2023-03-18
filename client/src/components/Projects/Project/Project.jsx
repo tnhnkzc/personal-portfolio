@@ -43,17 +43,13 @@ const Project = ({ project, setCurrentId }) => {
   }, []);
 
   return (
-    <Card className="w-3/4 h-3/4">
+    <Card className="mb-3">
       <CardMedia className={classes.media} image={project.selectedFile} />
-      <CardContent
-        style={{
-          background: "#330033",
-        }}
-      >
+      <CardContent className="bg-red-400">
         <Typography
           className={classes.projectTitle}
           style={{ fontFamily: "Comfortaa", color: "beige" }}
-          variant="h5"
+          variant="h3"
           color="textPrimary"
         >
           {project.title}
@@ -73,12 +69,7 @@ const Project = ({ project, setCurrentId }) => {
           Tools: {project.tools}
         </Typography>
       </CardContent>
-      <CardActions
-        className={classes.cardActions}
-        style={{
-          background: "#330033",
-        }}
-      >
+      <CardActions className="bg-red-400 flex justify-end gap-3">
         {user && (
           <Button
             id="editButton"
