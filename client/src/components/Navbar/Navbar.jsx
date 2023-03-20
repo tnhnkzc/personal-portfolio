@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { LOGOUT } from "../../constants/actionTypes";
@@ -112,6 +112,15 @@ function Navbar() {
     setMenuOpen(false);
   };
 
+  let ref1 = useRef(projectsRef);
+  let ref2 = useRef(contactRef);
+
+  const handleScrollContact = (ref) => {
+      console.log(ref1)
+    if (!ref.current) return console.log("errorr");
+    ref.current.scrollToView({ behavior: "smooth" });
+  };
+
   return (
     show && (
       <AppBar className={classes.appBar}>
@@ -137,8 +146,7 @@ function Navbar() {
                 }}
                 onMouseEnter={handleMouseEnterUnderlineProjects}
                 onMouseLeave={handleMouseLeaveUnderlineProjects}
-                component={Link}
-                to="/projects"
+                onClick={() => handleScrollContact(ref1)}
                 className={classes.navbarLinks}
                 size={underlineProjects ? "large" : "medium"}
               >
@@ -155,8 +163,7 @@ function Navbar() {
                 }}
                 onMouseEnter={handleMouseEnterUnderlineContact}
                 onMouseLeave={handleMouseLeaveUnderlineContact}
-                component={Link}
-                to="/contact"
+                onClick={() => handleScrollContact(ref2)}
                 className={classes.navbarLinks}
               >
                 {t("navBar.link2")}

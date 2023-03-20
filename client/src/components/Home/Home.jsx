@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Container, Typography, Grow } from "@mui/material";
 import useStyles from "./styles";
@@ -16,6 +16,7 @@ import WebFont from "webfontloader";
 import { motion } from "framer-motion";
 import Projects from "../Projects/Projects.jsx";
 import Contact from "../Contact/Contact.jsx";
+import Navbar from "../Navbar/Navbar.jsx";
 const Home = () => {
   // Styles
   const classes = useStyles();
@@ -78,6 +79,9 @@ const Home = () => {
     });
   }, []);
 
+  const contactRef = useRef(null);
+  const projectsRef = useRef(null);
+
   return (
     <Grow in>
       <motion.div
@@ -85,6 +89,7 @@ const Home = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
       >
+        <Navbar  contactRef={contactRef} projectsRef={projectsRef}/>
         <section className="h-screen flex flex-col items-center justify-center">
           <Typography
             className={classes.title}
@@ -107,6 +112,8 @@ const Home = () => {
             {t("homePage.description.part3")}
           </Typography>
         </section>
+        <Projects ref={projectsRef} />
+        <Contact ref={contactRef}/>
       </motion.div>
 
       {/*    <motion.div
