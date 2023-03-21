@@ -61,21 +61,21 @@ function Navbar() {
   // Hide navbar when scrolling
   const [show, setShow] = useState(true);
 
-  const controlNavbar = () => {
+    {/*const controlNavbar = () => {
     if (window.scrollY > 75) {
       setShow(false);
     } else if (window.scrollY < 75) {
       setShow(true);
     }
-  };
+  };*/}
 
-  useEffect(() => {
+  {/*useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
 
     return () => {
       window.removeEventListener("scroll", controlNavbar);
     };
-  }, []);
+  }, []);*/}
 
   // Mouse hover effects for navbar links
   const [underlineProjects, setUnderlineProjects] = useState(false);
@@ -118,7 +118,7 @@ function Navbar() {
       <AppBar className={classes.appBar}>
         <Toolbar disableGutters className={classes.toolBar}>
           <Container className={classes.logoContainer}>
-            <Link to="home">
+            <Link to="home" duration={750} smooth={true} className="cursor-pointer">
               <Typography>
                 <img src={logo} alt="logo" className={classes.logo} />
               </Typography>
@@ -130,8 +130,8 @@ function Navbar() {
                 to="projects"
                 spy={true}
                 smooth={true}
-                offset={-50}
-                duration={500}
+                offset={-200}
+                duration={750}
               >
                 <Button
                   style={{
@@ -155,7 +155,7 @@ function Navbar() {
                 to="contact"
                 spy={true}
                 smooth={true}
-                duration={500}
+                duration={750}
               >
                 <Button
                   size={underlineContact ? "large" : "medium"}

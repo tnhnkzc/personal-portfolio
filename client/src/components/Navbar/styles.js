@@ -4,7 +4,7 @@ export default makeStyles((theme) => ({
   appBar: {
     background: "transparent !important",
     width: "100%",
-    height: "150px",
+    height: "120px",
   },
   toolBar: {
     background: "#EEA47F !important",
@@ -31,7 +31,7 @@ export default makeStyles((theme) => ({
   },
   navbarLinksContainer: {
     width: "50% !important",
-    height: "150px",
+    height: "100px",
     display: "flex !important",
     flexDirection: "row",
     justifyContent: "flex-end",
