@@ -12,7 +12,7 @@ export default makeStyles((theme) => ({
     height: "150px",
     display: "flex !important",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
   },
   logo: {
     width: "200px",
@@ -31,10 +31,10 @@ export default makeStyles((theme) => ({
   },
   navbarLinksContainer: {
     width: "50% !important",
-    height: "100px",
+    height: "120px",
     display: "flex !important",
     flexDirection: "row",
-    justifyContent: "flex-end",
+    justifyContent: "space-evenly",
     [theme.breakpoints.down("xs")]: {
       visibility: "hidden",
     },

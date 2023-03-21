@@ -53,29 +53,10 @@ function Navbar() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Droid Sans", "Chilanka", "KoHo"],
+        families: ["Droid Sans", "Comfortaa"],
       },
     });
   }, []);
-
-  // Hide navbar when scrolling
-  const [show, setShow] = useState(true);
-
-    {/*const controlNavbar = () => {
-    if (window.scrollY > 75) {
-      setShow(false);
-    } else if (window.scrollY < 75) {
-      setShow(true);
-    }
-  };*/}
-
-  {/*useEffect(() => {
-    window.addEventListener("scroll", controlNavbar);
-
-    return () => {
-      window.removeEventListener("scroll", controlNavbar);
-    };
-  }, []);*/}
 
   // Mouse hover effects for navbar links
   const [underlineProjects, setUnderlineProjects] = useState(false);
@@ -114,177 +95,182 @@ function Navbar() {
   };
 
   return (
-    show && (
-      <AppBar className={classes.appBar}>
-        <Toolbar disableGutters className={classes.toolBar}>
-          <Container className={classes.logoContainer}>
-            <Link to="home" duration={750} smooth={true} className="cursor-pointer">
-              <Typography>
-                <img src={logo} alt="logo" className={classes.logo} />
-              </Typography>
+    <AppBar className={classes.appBar}>
+      <Toolbar disableGutters className={classes.toolBar}>
+        <Container className={classes.logoContainer}>
+          <Link
+            to="home"
+            duration={750}
+            smooth={true}
+            className="cursor-pointer"
+          >
+            <Typography>
+              <img src={logo} alt="logo" className={classes.logo} />
+            </Typography>
+          </Link>
+        </Container>
+        <Container className={classes.navbarLinksContainer}>
+          <Container className={classes.buttonContainers}>
+            <Link
+              to="projects"
+              spy={true}
+              smooth={true}
+              offset={-200}
+              duration={750}
+            >
+              <Button
+                style={{
+                  fontFamily: "Comfortaa",
+                  textDecoration: `${underlineProjects ? "underline" : "none"}`,
+                  transition: "0.8s",
+                }}
+                onMouseEnter={handleMouseEnterUnderlineProjects}
+                onMouseLeave={handleMouseLeaveUnderlineProjects}
+                className={classes.navbarLinks}
+                size={underlineProjects ? "large" : "medium"}
+              >
+                {t("navBar.link1")}
+              </Button>
             </Link>
           </Container>
-          <Container className={classes.navbarLinksContainer}>
-            <Container className={classes.buttonContainers}>
-              <Link
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={-200}
-                duration={750}
+          <Container className={classes.buttonContainers}>
+            <Link to="contact" spy={true} smooth={true} duration={750}>
+              <Button
+                size={underlineContact ? "large" : "medium"}
+                style={{
+                  fontFamily: "Comfortaa",
+                  textDecoration: `${underlineContact ? "underline" : "none"}`,
+                  transition: "0.8s",
+                }}
+                onMouseEnter={handleMouseEnterUnderlineContact}
+                onMouseLeave={handleMouseLeaveUnderlineContact}
+                className={classes.navbarLinks}
               >
-                <Button
-                  style={{
-                    fontFamily: "Droid Sans",
-                    textDecoration: `${
-                      underlineProjects ? "underline" : "none"
-                    }`,
-                    transition: "0.8s",
-                  }}
-                  onMouseEnter={handleMouseEnterUnderlineProjects}
-                  onMouseLeave={handleMouseLeaveUnderlineProjects}
-                  className={classes.navbarLinks}
-                  size={underlineProjects ? "large" : "medium"}
-                >
-                  {t("navBar.link1")}
-                </Button>
-              </Link>
-            </Container>
-            <Container className={classes.buttonContainers}>
-              <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                duration={750}
-              >
-                <Button
-                  size={underlineContact ? "large" : "medium"}
-                  style={{
-                    fontFamily: "Droid Sans",
-                    textDecoration: `${
-                      underlineContact ? "underline" : "none"
-                    }`,
-                    transition: "0.8s",
-                  }}
-                  onMouseEnter={handleMouseEnterUnderlineContact}
-                  onMouseLeave={handleMouseLeaveUnderlineContact}
-                  className={classes.navbarLinks}
-                >
-                  {t("navBar.link2")}
-                </Button>
-              </Link>
-            </Container>
-            {user && (
-              <div className={classes.buttonContainers}>
-                <Avatar
-                  className={classes.usernameContainer}
-                  alt={user.result.name}
-                  src={user.result.imageURL}
-                >
-                  {user.result.username.charAt(0)}
-                </Avatar>
-                <Typography variant="h6">{user.result.name}</Typography>
-                <Button
-                  className={classes.logoutButton}
-                  color="secondary"
-                  variant="contained"
-                  onClick={logout}
-                >
-                  {t("navBar.logout")}
-                </Button>
-              </div>
-            )}
-            <Container className={classes.buttonContainers}>
-              <BasicMenu />
-            </Container>
+                {t("navBar.link2")}
+              </Button>
+            </Link>
           </Container>
-          <IconButton className={classes.hamburgerMenu}>
-            <MenuIcon
-              onClick={handleMenuOpen}
-              className={classes.hamburgerMenuIcon}
+          {user && (
+            <div className={classes.buttonContainers}>
+              <Avatar
+                className={classes.usernameContainer}
+                alt={user.result.name}
+                src={user.result.imageURL}
+              >
+                {user.result.username.charAt(0)}
+              </Avatar>
+              <Typography variant="h6">{user.result.name}</Typography>
+              <Button
+                className={classes.logoutButton}
+                color="secondary"
+                variant="contained"
+                onClick={logout}
+              >
+                {t("navBar.logout")}
+              </Button>
+            </div>
+          )}
+          <Container className={classes.buttonContainers}>
+            <BasicMenu />
+          </Container>
+        </Container>
+        <IconButton className={classes.hamburgerMenu}>
+          <MenuIcon
+            onClick={handleMenuOpen}
+            className={classes.hamburgerMenuIcon}
+          />
+        </IconButton>
+      </Toolbar>
+
+      {/* Hamburger Menu */}
+
+      <SwipeableDrawer
+        className={classes.SwipeableDrawer}
+        open={menuOpen}
+        anchor="right"
+        onOpen={() => setMenuOpen(true)}
+        onClose={() => setMenuOpen(false)}
+      >
+        <div
+          className={classes.chevronIconDiv}
+          style={{
+            background: "black",
+          }}
+        >
+          <IconButton className={classes.chevronIcon}>
+            <ChevronRightIcon
+              onClick={handleCloseMenu}
+              style={{ color: "beige" }}
             />
           </IconButton>
-        </Toolbar>
-
-        {/* Hamburger Menu */}
-
-        <SwipeableDrawer
-          className={classes.SwipeableDrawer}
-          open={menuOpen}
-          anchor="right"
-          onOpen={() => setMenuOpen(true)}
-          onClose={() => setMenuOpen(false)}
+        </div>
+        <Container
+          style={{
+            background: "black",
+          }}
+          className={classes.hamburgerMenuContainer}
         >
-          <div
-            className={classes.chevronIconDiv}
-            style={{
-              background: "black",
-            }}
-          >
-            <IconButton className={classes.chevronIcon}>
-              <ChevronRightIcon
-                onClick={handleCloseMenu}
-                style={{ color: "beige" }}
-              />
-            </IconButton>
-          </div>
-          <Container
-            style={{
-              background: "black",
-            }}
-            className={classes.hamburgerMenuContainer}
-          >
-            <Container className={classes.hmbrgMenuLinkContainer}>
-              <BasicMenu />
+          <Container className={classes.hmbrgMenuLinkContainer}>
+            <BasicMenu />
+            <Link
+              to="projects"
+              spy={true}
+              smooth={true}
+              offset={-200}
+              duration={750}
+            >
               <Button
-                style={{ fontFamily: "Droid Sans" }}
-                component={Link}
-                to="/projects"
+                style={{ fontFamily: "Comfortaa" }}
                 className={classes.navbarLinks}
                 onClick={closeMenuOnClick}
               >
                 {t("navBar.link1")}
               </Button>
+            </Link>
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              duration={750}
+            >
               <Button
-                style={{ fontFamily: "Droid Sans" }}
-                component={Link}
-                to="/contact"
+                style={{ fontFamily: "Comfortaa" }}
                 className={classes.navbarLinks}
                 onClick={closeMenuOnClick}
               >
                 {t("navBar.link2")}
               </Button>
-            </Container>
-            <Container className={classes.hmbrgMenuUserContainer}>
-              {user && (
-                <>
-                  <Container className={classes.userContainer}>
-                    <Avatar
-                      className={classes.usernameContainer}
-                      alt={user.result.name}
-                      src={user.result.imageURL}
-                    >
-                      {user.result.username.charAt(0)}
-                    </Avatar>
-                    <Typography variant="h6">{user.result.name}</Typography>
-                  </Container>
-                  <Container>
-                    <Button
-                      className={classes.logoutButton}
-                      color="secondary"
-                      variant="contained"
-                      onClick={logout}
-                    >
-                      {t("navBar.logout")}
-                    </Button>
-                  </Container>
-                </>
-              )}
-            </Container>
+            </Link>
           </Container>
-        </SwipeableDrawer>
-      </AppBar>
-    )
+          <Container className={classes.hmbrgMenuUserContainer}>
+            {user && (
+              <>
+                <Container className={classes.userContainer}>
+                  <Avatar
+                    className={classes.usernameContainer}
+                    alt={user.result.name}
+                    src={user.result.imageURL}
+                  >
+                    {user.result.username.charAt(0)}
+                  </Avatar>
+                  <Typography variant="h6">{user.result.name}</Typography>
+                </Container>
+                <Container>
+                  <Button
+                    className={classes.logoutButton}
+                    color="secondary"
+                    variant="contained"
+                    onClick={logout}
+                  >
+                    {t("navBar.logout")}
+                  </Button>
+                </Container>
+              </>
+            )}
+          </Container>
+        </Container>
+      </SwipeableDrawer>
+    </AppBar>
   );
 }
 

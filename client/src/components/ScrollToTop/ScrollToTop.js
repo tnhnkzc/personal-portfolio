@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Button } from "@mui/material";
-import ArrowUpwardRoundedIcon from "@material-ui/icons/ArrowUpwardRounded";
 import { Link } from "react-scroll";
+import { ArrowUpCircle } from "lucide-react";
 
 function ScrollToTop() {
   return (
     <Container
+      className="fixed bottom-10 right-10 !w-9 flex justify-center items-center"
       style={{
         transitionTimingFunction: "ease-in",
         transition: "1.2s",
@@ -18,8 +19,9 @@ function ScrollToTop() {
             float: "right",
             color: "#ffcc00",
           }}
+          className="border-2 border-black rounded"
         >
-          <ArrowUpwardRoundedIcon />
+          <ArrowUpCircle className="text-black hidden md:block" size={36} />
         </Button>
       </Link>
     </Container>

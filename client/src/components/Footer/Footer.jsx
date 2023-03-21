@@ -8,27 +8,10 @@ const Footer = () => {
   const classes = useStyles();
   const currentYear = new Date().getFullYear();
 
-  // const [show, setShow] = useState(false);
-
-  // const handleShow = () => {
-  //   const currentScrollY = window.scrollY;
-  //   if (currentScrollY > 100) {
-  //     setShow(true);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleShow);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleShow);
-  //   };
-  // });
-
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Droid Sans", "Chilanka", "Grape Nuts"],
+        families: ["Comfortaa", "Chilanka", "Grape Nuts"],
       },
     });
   }, []);
@@ -40,29 +23,17 @@ const Footer = () => {
       <Container maxWidth="lg" style={{ textAlign: "center" }}>
         <Typography
           className={classes.footerText}
-          style={{ fontFamily: "Droid Sans", fontWeight: "bold" }}
+          style={{ fontFamily: "Comfortaa", fontWeight: "bold" }}
         >
           {t("footer.part1")}
         </Typography>
 
         <Typography
           className={classes.footerText}
-          style={{ fontFamily: "Droid Sans", fontWeight: "bold" }}
+          style={{ fontFamily: "Comfortaa", fontWeight: "bold" }}
         >
           &copy; Copyright {currentYear}
         </Typography>
-
-        {/* {isVisible ? (
-          <Button
-            onClick={scrollToTop}
-            style={{
-              float: "right",
-              color: "#ffcc00",
-            }}
-          >
-            <ArrowUpwardRoundedIcon />
-          </Button>
-        ) : null} */}
       </Container>
     </footer>
   );

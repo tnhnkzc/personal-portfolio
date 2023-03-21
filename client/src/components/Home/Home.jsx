@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Typography, Grow } from "@mui/material";
 import useStyles from "./styles";
@@ -14,9 +14,7 @@ import mysql from "../../images/mysql.png";
 import adobexd from "../../images/adobexd.png";
 import WebFont from "webfontloader";
 import { motion } from "framer-motion";
-import Projects from "../Projects/Projects.jsx";
-import Contact from "../Contact/Contact.jsx";
-import Navbar from "../Navbar/Navbar.jsx";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 const Home = () => {
   // Styles
@@ -80,18 +78,14 @@ const Home = () => {
     });
   }, []);
 
-  const contactRef = useRef(null);
-  const projectsRef = useRef(null);
-
   return (
     <Grow in id="home">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-      >
-        <Navbar contactRef={contactRef} projectsRef={projectsRef} />
-        <section className="h-screen flex flex-col items-center justify-center">
+      <section className="h-screen flex flex-col items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
           <Typography
             className={classes.title}
             style={{ fontFamily: "Rubik Glitch" }}
@@ -112,10 +106,9 @@ const Home = () => {
             </span>
             {t("homePage.description.part3")}
           </Typography>
-        </section>
-        <Projects ref={projectsRef} />
-        <Contact ref={contactRef} />
-      </motion.div>
+        </motion.div>
+        <ScrollToTop />
+      </section>
     </Grow>
   );
 };

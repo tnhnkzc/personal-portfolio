@@ -6,6 +6,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import LanguageIcon from "@material-ui/icons/Language";
 import "flag-icons";
+import {Languages} from 'lucide-react'
 
 export default function BasicMenu() {
   const languages = [
@@ -45,7 +46,7 @@ export default function BasicMenu() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <LanguageIcon style={{ color: "black" }} />
+        <Languages style={{ color: "black" }} />
       </Button>
       <Menu
         id="basic-menu"

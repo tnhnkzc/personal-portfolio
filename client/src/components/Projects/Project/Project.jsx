@@ -45,7 +45,7 @@ const Project = ({ project, setCurrentId }) => {
   return (
     <Card className="mb-3">
       <CardMedia className={classes.media} image={project.selectedFile} />
-      <CardContent className="bg-red-400">
+      <CardContent className="bg-red-400 h-72">
         <Typography
           className={classes.projectTitle}
           style={{ fontFamily: "Comfortaa", color: "beige" }}
@@ -69,7 +69,7 @@ const Project = ({ project, setCurrentId }) => {
           Tools: {project.tools}
         </Typography>
       </CardContent>
-      <CardActions className="bg-red-400 flex justify-end gap-3">
+      <CardActions className="bg-red-400 flex justify-end gap-3 h-6">
         {user && (
           <Button
             id="editButton"
