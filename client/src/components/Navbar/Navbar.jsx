@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { LOGOUT } from "../../constants/actionTypes";
 import decode from "jwt-decode";
@@ -20,6 +20,7 @@ import logo from "../../images/logo.png";
 import useStyles from "./styles";
 import WebFont from "webfontloader";
 import BasicMenu from "../LanguageButton/LanguageButton";
+import { Link } from "react-scroll";
 
 function Navbar() {
   const classes = useStyles();
@@ -112,62 +113,66 @@ function Navbar() {
     setMenuOpen(false);
   };
 
-  let ref1 = useRef(projectsRef);
-  let ref2 = useRef(contactRef);
-
-  const handleScrollContact = (ref) => {
-      console.log(ref1)
-    if (!ref.current) return console.log("errorr");
-    ref.current.scrollToView({ behavior: "smooth" });
-  };
-
   return (
     show && (
       <AppBar className={classes.appBar}>
         <Toolbar disableGutters className={classes.toolBar}>
           <Container className={classes.logoContainer}>
-            <Typography component={Link} to="/">
-              <img
-                component={Link}
-                to="/"
-                src={logo}
-                alt="logo"
-                className={classes.logo}
-              />
-            </Typography>
+            <Link to="home">
+              <Typography>
+                <img src={logo} alt="logo" className={classes.logo} />
+              </Typography>
+            </Link>
           </Container>
           <Container className={classes.navbarLinksContainer}>
             <Container className={classes.buttonContainers}>
-              <Button
-                style={{
-                  fontFamily: "Droid Sans",
-                  textDecoration: `${underlineProjects ? "underline" : "none"}`,
-                  transition: "0.8s",
-                }}
-                onMouseEnter={handleMouseEnterUnderlineProjects}
-                onMouseLeave={handleMouseLeaveUnderlineProjects}
-                onClick={() => handleScrollContact(ref1)}
-                className={classes.navbarLinks}
-                size={underlineProjects ? "large" : "medium"}
+              <Link
+                to="projects"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={500}
               >
-                {t("navBar.link1")}
-              </Button>
+                <Button
+                  style={{
+                    fontFamily: "Droid Sans",
+                    textDecoration: `${
+                      underlineProjects ? "underline" : "none"
+                    }`,
+                    transition: "0.8s",
+                  }}
+                  onMouseEnter={handleMouseEnterUnderlineProjects}
+                  onMouseLeave={handleMouseLeaveUnderlineProjects}
+                  className={classes.navbarLinks}
+                  size={underlineProjects ? "large" : "medium"}
+                >
+                  {t("navBar.link1")}
+                </Button>
+              </Link>
             </Container>
             <Container className={classes.buttonContainers}>
-              <Button
-                size={underlineContact ? "large" : "medium"}
-                style={{
-                  fontFamily: "Droid Sans",
-                  textDecoration: `${underlineContact ? "underline" : "none"}`,
-                  transition: "0.8s",
-                }}
-                onMouseEnter={handleMouseEnterUnderlineContact}
-                onMouseLeave={handleMouseLeaveUnderlineContact}
-                onClick={() => handleScrollContact(ref2)}
-                className={classes.navbarLinks}
+              <Link
+                to="contact"
+                spy={true}
+                smooth={true}
+                duration={500}
               >
-                {t("navBar.link2")}
-              </Button>
+                <Button
+                  size={underlineContact ? "large" : "medium"}
+                  style={{
+                    fontFamily: "Droid Sans",
+                    textDecoration: `${
+                      underlineContact ? "underline" : "none"
+                    }`,
+                    transition: "0.8s",
+                  }}
+                  onMouseEnter={handleMouseEnterUnderlineContact}
+                  onMouseLeave={handleMouseLeaveUnderlineContact}
+                  className={classes.navbarLinks}
+                >
+                  {t("navBar.link2")}
+                </Button>
+              </Link>
             </Container>
             {user && (
               <div className={classes.buttonContainers}>

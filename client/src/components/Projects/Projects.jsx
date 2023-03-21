@@ -36,8 +36,8 @@ const Projects = ({ setCurrentId }) => {
     <CircularProgress className={classes.circularProgress} />
   ) : (
     <>
-      <Grow in>
-        <section className="h-auto md:h-auto flex flex-col items-center justify-between">
+      <Grow in id="projects">
+        <section className="h-auto md:h-auto flex flex-col items-center justify-between p-2">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -91,65 +91,6 @@ const Projects = ({ setCurrentId }) => {
             </Grid>
           </motion.div>
         </section>
-        {/*
-        <Container className={classes.projectsContainer}>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Container className={classes.titleContainer}>
-              <Typography
-                variant="h3"
-                className="text-black"
-                style={{ fontFamily: "Rubik Glitch" }}
-              >
-                {t("projectsPage.title")}
-              </Typography>
-              <Container className={classes.container} container>
-                {user && (
-                  <Button
-                    className={classes.addButton}
-                    variant="contained"
-                    style={{
-                      background: "#330033",
-                    }}
-                  >
-                    <Typography
-                      component={Link}
-                      to="/projects/createProject"
-                      className={classes.addButtonText}
-                      style={{ fontFamily: "Droid Sans", color: "beige" }}
-                    >
-                      Add a Project
-                    </Typography>
-                  </Button>
-                )}
-              </Container>
-            </Container>
-          </motion.div> */}
-        {/* <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-          >
-            <Grid
-              className={classes.projectsGrid}
-              container
-              justify="space-between"
-              alignItems="stretch"
-              spacing={6}
-              sm={12}
-            >
-              {projects.map((project) => {
-                return (
-                  <Grid key={project._id} item xs={12} sm={6}>
-                    <Project setCurrentId={setCurrentId} project={project} />
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </motion.div>*/}
       </Grow>
     </>
   );

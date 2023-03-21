@@ -70,7 +70,7 @@ const Contact = () => {
   };
 
   return (
-    <Grow in>
+    <Grow in id="contact">
         <section className="h-screen flex flex-col items-center justify-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
