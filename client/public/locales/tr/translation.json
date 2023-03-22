@@ -2,6 +2,7 @@
   "navBar": {
     "link1": "Projeler",
     "link2": "Iletişim",
+    "link3": "Ben kimim?"
     "logout": "Çıkış"
   },
   "footer": {
@@ -16,8 +17,8 @@
     }
   },
   "aboutMessage": {
-    "part1": "Eski bir Ingilizce öğretmeni olarak kariyerimi değiştirmek istedim. Türkiye'de doğup büyüdüm, Fransa'ya Aralık 2020'de geldim.",
-    "part2": "2021'in sonunda kendi başıma web geliştirme çalışmaya başladım ve Eylül 2022'de web geliştirme eğitimi aldım."
+    "part1": "Ben kimim ?",
+    "part2": "Eski bir Ingilizce öğretmeni olarak kariyerimi değiştirmek istedim ve otonom olarak web geliştirme çalismaya basladim. Merakli birisi olarak yeni teknolojik gelismeleri takip etmeyi cok seviyorum."
   },
   "languagesMessage": {
     "part1": "Front-End Web Geliştirme",

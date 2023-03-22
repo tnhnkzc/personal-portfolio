@@ -2,6 +2,7 @@
   "navBar": {
     "link1": "Projects",
     "link2": "Contact",
+    "link3": "About me",
     "logout": "LogOut"
   },
   "footer": {
@@ -16,8 +17,8 @@
     }
   },
   "aboutMessage": {
-    "part1": "A former English teacher who wanted to change his career path. Born and raised in Turkey, moved to France in December 2020.",
-    "part2": "Started self-studying web development in late 2021 and attended a bootcamp in September 2022."
+    "part1": "Who am I ?",
+    "part2": "I’m a former English teacher who wanted to change his career path. Started self-studying web development. As an auto-didactic person, I love learning new stuff. I’m always curious about new technological advancements."
   },
   "languagesMessage": {
     "part1": "Front-End Development",

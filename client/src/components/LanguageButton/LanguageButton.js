@@ -46,7 +46,7 @@ export default function BasicMenu() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <Languages style={{ color: "black" }} />
+        <Languages className="hover:text-red-400 transition"/>
       </Button>
       <Menu
         id="basic-menu"

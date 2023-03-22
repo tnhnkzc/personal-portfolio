@@ -58,25 +58,6 @@ function Navbar() {
     });
   }, []);
 
-  // Mouse hover effects for navbar links
-  const [underlineProjects, setUnderlineProjects] = useState(false);
-
-  const handleMouseEnterUnderlineProjects = () => {
-    setUnderlineProjects(true);
-  };
-
-  const handleMouseLeaveUnderlineProjects = () => {
-    setUnderlineProjects(false);
-  };
-
-  const [underlineContact, setUnderlineContact] = useState(false);
-
-  const handleMouseEnterUnderlineContact = () => {
-    setUnderlineContact(true);
-  };
-  const handleMouseLeaveUnderlineContact = () => {
-    setUnderlineContact(false);
-  };
 
   // Swipeable Menu for Mobile
   const [menuOpen, setMenuOpen] = useState(false);
@@ -112,6 +93,23 @@ function Navbar() {
         <Container className={classes.navbarLinksContainer}>
           <Container className={classes.buttonContainers}>
             <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              duration={750}
+            >
+              <Button
+                style={{
+                  fontFamily: "Comfortaa",
+                }}
+                className="!text-lg lg:!text-xl hover:text-red-400"
+              >
+                {t("navBar.link3")}
+              </Button>
+            </Link>
+          </Container>
+          <Container className={classes.buttonContainers}>
+            <Link
               to="projects"
               spy={true}
               smooth={true}
@@ -121,13 +119,8 @@ function Navbar() {
               <Button
                 style={{
                   fontFamily: "Comfortaa",
-                  textDecoration: `${underlineProjects ? "underline" : "none"}`,
-                  transition: "0.8s",
                 }}
-                onMouseEnter={handleMouseEnterUnderlineProjects}
-                onMouseLeave={handleMouseLeaveUnderlineProjects}
-                className={classes.navbarLinks}
-                size={underlineProjects ? "large" : "medium"}
+                className="!text-lg lg:!text-xl hover:text-red-400"
               >
                 {t("navBar.link1")}
               </Button>
@@ -136,15 +129,10 @@ function Navbar() {
           <Container className={classes.buttonContainers}>
             <Link to="contact" spy={true} smooth={true} duration={750}>
               <Button
-                size={underlineContact ? "large" : "medium"}
                 style={{
                   fontFamily: "Comfortaa",
-                  textDecoration: `${underlineContact ? "underline" : "none"}`,
-                  transition: "0.8s",
                 }}
-                onMouseEnter={handleMouseEnterUnderlineContact}
-                onMouseLeave={handleMouseLeaveUnderlineContact}
-                className={classes.navbarLinks}
+                className="!text-lg lg:!text-xl hover:text-red-400"
               >
                 {t("navBar.link2")}
               </Button>
@@ -201,7 +189,7 @@ function Navbar() {
           <IconButton className={classes.chevronIcon}>
             <ChevronRightIcon
               onClick={handleCloseMenu}
-              style={{ color: "beige" }}
+              style={{ fontSize: "32px" }}
             />
           </IconButton>
         </div>
@@ -222,7 +210,7 @@ function Navbar() {
             >
               <Button
                 style={{ fontFamily: "Comfortaa" }}
-                className={classes.navbarLinks}
+                className="!text-xl hover:text-red-400"
                 onClick={closeMenuOnClick}
               >
                 {t("navBar.link1")}
@@ -231,7 +219,7 @@ function Navbar() {
             <Link to="contact" spy={true} smooth={true} duration={750}>
               <Button
                 style={{ fontFamily: "Comfortaa" }}
-                className={classes.navbarLinks}
+                className="!text-xl hover:text-red-400"
                 onClick={closeMenuOnClick}
               >
                 {t("navBar.link2")}

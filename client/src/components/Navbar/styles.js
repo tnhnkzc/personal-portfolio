@@ -18,7 +18,6 @@ export default makeStyles((theme) => ({
   logo: {
     width: "200px",
     position: "relative",
-    top: "20px",
     [theme.breakpoints.down("sm")]: {
       width: "150px",
     },
@@ -35,7 +34,7 @@ export default makeStyles((theme) => ({
     display: "flex !important",
     flexDirection: "row",
     justifyContent: "space-evenly",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       visibility: "hidden",
     },
   },
@@ -43,20 +42,16 @@ export default makeStyles((theme) => ({
     width: "33% !important",
   },
 
-  navbarLinks: {
-    color: "black !important",
-  },
-
   // Hamburger Menu Styles
 
   hamburgerMenu: {
     right: "20px",
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       visibility: "hidden",
     },
   },
   swipeableDrawer: {
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       visibility: "hidden",
     },
   },
@@ -87,5 +82,6 @@ export default makeStyles((theme) => ({
     display: "flex !important",
     flexDirection: "column",
     margin: "0",
+    gap: "50px",
   },
 }));
