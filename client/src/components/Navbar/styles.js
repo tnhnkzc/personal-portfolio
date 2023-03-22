@@ -19,7 +19,7 @@ export default makeStyles((theme) => ({
     width: "200px",
     position: "relative",
     [theme.breakpoints.down("sm")]: {
-      width: "150px",
+      width: "125px",
     },
   },
   logoContainer: {

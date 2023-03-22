@@ -58,7 +58,6 @@ function Navbar() {
     });
   }, []);
 
-
   // Swipeable Menu for Mobile
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -92,12 +91,7 @@ function Navbar() {
         </Container>
         <Container className={classes.navbarLinksContainer}>
           <Container className={classes.buttonContainers}>
-            <Link
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={750}
-            >
+            <Link to="about" spy={true} smooth={true} duration={750}>
               <Button
                 style={{
                   fontFamily: "Comfortaa",
@@ -201,6 +195,17 @@ function Navbar() {
         >
           <Container className={classes.hmbrgMenuLinkContainer}>
             <BasicMenu />
+            <Link to="about" spy={true} smooth={true} duration={750}>
+              <Button
+                style={{
+                  fontFamily: "Comfortaa",
+                }}
+                onClick={closeMenuOnClick}
+                className="!text-lg lg:!text-xl hover:text-red-400"
+              >
+                {t("navBar.link3")}
+              </Button>
+            </Link>
             <Link
               to="projects"
               spy={true}

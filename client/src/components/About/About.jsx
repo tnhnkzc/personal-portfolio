@@ -20,7 +20,10 @@ const About = () => {
 
   return (
     <Grow in>
-      <section id="about" className="h-screen flex flex-col items-center justify-center">
+      <section
+        id="about"
+        className="h-screen flex flex-col items-center justify-center"
+      >
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -31,19 +34,17 @@ const About = () => {
               {t("aboutMessage.part1")}
             </Typography>
           </Container>
-          <Container className="!flex flex-row items-center justify-evenly gap-10 ">
+          <div className="flex flex-col md:flex-row items-center md:justify-evenly p-2 ">
             <img className="rounded-full" src={photo} alt="My photo" />
             <Typography
+              className="text-center text-lg md:!text-2xl md:text-left md:w-1/2"
               style={{
                 fontFamily: "Droid Sans",
-                fontSize: "24px",
-                textAlign: "left",
-                width: "auto",
               }}
             >
               {t("aboutMessage.part2")}
             </Typography>
-          </Container>
+          </div>
         </motion.div>
       </section>
     </Grow>
