@@ -2,17 +2,17 @@
 @tailwind utilities;
 
 * {
-  margin: auto;
   scroll-behavior: auto;
+  position:relative;
+  margin:auto;
 }
 @media only screen and (max-width: 600px) {
   * {
     margin: 0;
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
 }
 body {
   background-color: #8aaae5;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }

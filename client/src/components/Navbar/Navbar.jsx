@@ -100,7 +100,7 @@ function Navbar() {
         <Container className={classes.logoContainer}>
           <Link
             to="home"
-            duration={750}
+            duration={500}
             smooth={true}
             className="cursor-pointer"
           >
@@ -185,11 +185,12 @@ function Navbar() {
       {/* Hamburger Menu */}
 
       <SwipeableDrawer
-        className={classes.SwipeableDrawer}
+        className={classes.swipeableDrawer}
         open={menuOpen}
         anchor="right"
         onOpen={() => setMenuOpen(true)}
         onClose={() => setMenuOpen(false)}
+        disableSwipeToOpen={true}
       >
         <div
           className={classes.chevronIconDiv}
@@ -227,12 +228,7 @@ function Navbar() {
                 {t("navBar.link1")}
               </Button>
             </Link>
-            <Link
-              to="contact"
-              spy={true}
-              smooth={true}
-              duration={750}
-            >
+            <Link to="contact" spy={true} smooth={true} duration={750}>
               <Button
                 style={{ fontFamily: "Comfortaa" }}
                 className={classes.navbarLinks}

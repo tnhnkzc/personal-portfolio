@@ -5,6 +5,7 @@ export default makeStyles((theme) => ({
     background: "transparent !important",
     width: "100%",
     height: "120px",
+    position: "fixed !important",
   },
   toolBar: {
     background: "#EEA47F !important",
@@ -20,7 +21,6 @@ export default makeStyles((theme) => ({
     top: "20px",
     [theme.breakpoints.down("sm")]: {
       width: "150px",
-      left: "20px",
     },
   },
   logoContainer: {
@@ -46,12 +46,16 @@ export default makeStyles((theme) => ({
   navbarLinks: {
     color: "black !important",
   },
-  
 
   // Hamburger Menu Styles
 
   hamburgerMenu: {
     right: "20px",
+    [theme.breakpoints.up("sm")]: {
+      visibility: "hidden",
+    },
+  },
+  swipeableDrawer: {
     [theme.breakpoints.up("sm")]: {
       visibility: "hidden",
     },

@@ -6,7 +6,7 @@ import { ArrowUpCircle } from "lucide-react";
 function ScrollToTop() {
   return (
     <Container
-      className="fixed bottom-10 right-10 !w-9 flex justify-center items-center"
+      className="fixed bottom-10 right-0 md:right-10 !w-9 flex justify-center items-center z-10"
       style={{
         transitionTimingFunction: "ease-in",
         transition: "1.2s",
@@ -21,7 +21,7 @@ function ScrollToTop() {
           }}
           className="border-2 border-black rounded"
         >
-          <ArrowUpCircle className="text-black hidden md:block" size={36} />
+          <ArrowUpCircle className="text-black md:block" size={36} />
         </Button>
       </Link>
     </Container>
