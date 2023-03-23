@@ -16,6 +16,11 @@ import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import WebFont from "webfontloader";
 import { motion } from "framer-motion";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import Twitter from "@material-ui/icons/Twitter";
+import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
+import MyPDF from "../../files/CV.pdf";
 
 const Contact = () => {
   const classes = useStyles();
@@ -26,7 +31,7 @@ const Contact = () => {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Droid Sans", "Chilanka", "Grape Nuts"],
+        families: ["Droid Sans", "Comfortaa", "Grape Nuts"],
       },
     });
   }, []);
@@ -56,7 +61,7 @@ const Contact = () => {
       setTimeout(() => {
         setStatus("");
       }, 1500);
-      
+
       dispatch(sendEmail(contactFormData));
     } else {
       setStatus("error");
@@ -69,128 +74,229 @@ const Contact = () => {
 
   return (
     <Grow in id="contact">
-        <section className="h-screen flex flex-col items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+      <section className="h-screen flex flex-col items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="flex gap-4 items-center justify-center flex-col"
+        >
+          <Typography
+            style={{ fontFamily: "Comfortaa" }}
+            className={classes.formTitle}
+            variant="h2"
           >
-            <Typography
-              style={{ fontFamily: "Chilanka" }}
-              className={classes.formTitle}
-              variant="h2"
+            {t("contactPage.title")}
+          </Typography>
+          <div className="flex w-full items-center justify-center ">
+            <motion.button
+              style={{
+                background: "transparent",
+                border: "none",
+                display: "flex",
+                width: "30px",
+                height: "40px",
+                marginBottom: "10px",
+              }}
+              whileHover={{ scale: 1.2, color: "red" }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.5 }}
             >
-              {t("contactPage.title")}
-            </Typography>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-          >
-            <Paper className={classes.formContainer}>
-              <form
-                style={{
-                  background:
-                    "linear-gradient(90deg, rgba(255,255,255,0.6671043417366946) 31%, rgba(201,149,35,0.30015756302521013) 54%)",
-                }}
-                autoComplete="off"
-                noValidate
-                className={classes.form}
-                onSubmit={handleSubmit}
-              >
-                <TextField
-                  className={classes.textField}
-                  name="email"
-                  variant="outlined"
-                  label="Email"
-                  fullWidth
-                  value={contactFormData.email}
-                  onChange={(e) =>
-                    setContactFormData({
-                      ...contactFormData,
-                      email: e.target.value,
-                    })
-                  }
-                />
-                <TextField
-                  className={classes.textField}
-                  name="fullName"
-                  variant="outlined"
-                  label={t("contactPage.name")}
-                  fullWidth
-                  value={contactFormData.fullName}
-                  onChange={(e) =>
-                    setContactFormData({
-                      ...contactFormData,
-                      fullName: e.target.value,
-                    })
-                  }
-                />
-                <TextField
-                  className={classes.textField}
-                  name="subject"
-                  variant="outlined"
-                  label={t("contactPage.subject")}
-                  fullWidth
-                  value={contactFormData.subject}
-                  onChange={(e) =>
-                    setContactFormData({
-                      ...contactFormData,
-                      subject: e.target.value,
-                    })
-                  }
-                />
-                <div>
-                  <TextareaAutosize
-                    style={{
-                      background: "#11ffee00",
-                      color: "black",
-                      borderColor: "black",
-                    }}
-                    className={classes.textArea}
-                    name="message"
-                    minRows={10}
-                    placeholder={t("contactPage.message")}
-                    value={contactFormData.message}
-                    onChange={(e) =>
-                      setContactFormData({
-                        ...contactFormData,
-                        message: e.target.value,
-                      })
-                    }
-                  />
-                </div>
-                <Button
-                  style={{
-                    fontFamily: "Droid Sans",
-                    background: "#330033",
-                    color: "beige",
-                  }}
-                  variant="contained"
-                  color="primary"
-                  type="submit"
+              <Typography className={classes.githubButton}>
+                <a
+                  target="_blank"
+                  href="https://www.github.com/tnhnkzc"
+                  rel="noreferrer"
                 >
-                  {t("contactPage.button")}
-                </Button>
-              </form>
-            </Paper>
-          </motion.div>
-          {status === "success" && (
-            <Container>
-              <Alert variant="filled" severity="success">
-                Your message is successfully sent !
-              </Alert>
-            </Container>
-          )}
-          {status === "error" && (
-            <Container fullWidth>
-              <Alert variant="filled" severity="error">
-                There has been a problem ! Please try again later.
-              </Alert>
-            </Container>
-          )}
-        </section>
+                  <GitHubIcon
+                    className="text-black hover:text-orange-300"
+                    fontSize="large"
+                  />
+                </a>
+              </Typography>
+            </motion.button>
+            <motion.button
+              style={{
+                backgroundColor: "transparent",
+                border: "none",
+                display: "flex",
+                width: "30px",
+                height: "40px",
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Typography>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/tunahankuzucu/"
+                  rel="noreferrer"
+                >
+                  <LinkedInIcon
+                    className="text-black hover:text-orange-300"
+                    fontSize="large"
+                  />
+                </a>
+              </Typography>
+            </motion.button>
+            <motion.button
+              style={{
+                backgroundColor: "transparent",
+                border: "none",
+                display: "flex",
+                width: "30px",
+                height: "40px",
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Typography>
+                <a
+                  target="_blank"
+                  href="https://www.twitter.com/tunahankuzucuu/"
+                  rel="noreferrer"
+                >
+                  <Twitter
+                    className="text-black hover:text-orange-300"
+                    fontSize="large"
+                  />
+                </a>
+              </Typography>
+            </motion.button>
+            <motion.button
+              style={{
+                backgroundColor: "transparent",
+                border: "none",
+                display: "flex",
+                width: "30px",
+                height: "40px",
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Typography>
+                <a
+                  href={MyPDF}
+                  target="_blank"
+                  download="CV.pdf"
+                  rel="noreferrer"
+                >
+                  <PictureAsPdfIcon
+                    fontSize="large"
+                    className="text-black hover:text-orange-300"
+                  />
+                </a>
+              </Typography>
+            </motion.button>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+        >
+          <Paper className={classes.formContainer}>
+            <form
+              autoComplete="off"
+              noValidate
+              className="p-4 bg-transparent"
+              onSubmit={handleSubmit}
+            >
+              <TextField
+                className={classes.textField}
+                name="email"
+                variant="standard"
+                label="Email"
+                fullWidth
+                value={contactFormData.email}
+                onChange={(e) =>
+                  setContactFormData({
+                    ...contactFormData,
+                    email: e.target.value,
+                  })
+                }
+              />
+              <TextField
+                className={classes.textField}
+                name="fullName"
+                variant="standard"
+                label={t("contactPage.name")}
+                fullWidth
+                value={contactFormData.fullName}
+                onChange={(e) =>
+                  setContactFormData({
+                    ...contactFormData,
+                    fullName: e.target.value,
+                  })
+                }
+              />
+              <TextField
+                className={classes.textField}
+                name="subject"
+                variant="standard"
+                label={t("contactPage.subject")}
+                fullWidth
+                value={contactFormData.subject}
+                onChange={(e) =>
+                  setContactFormData({
+                    ...contactFormData,
+                    subject: e.target.value,
+                  })
+                }
+              />
+              <div>
+                <TextareaAutosize
+                  style={{
+                    background: "#11ffee00",
+                    color: "black",
+                    borderColor: "black",
+                  }}
+                  className={classes.textArea}
+                  name="message"
+                  minRows={10}
+                  placeholder={t("contactPage.message")}
+                  value={contactFormData.message}
+                  onChange={(e) =>
+                    setContactFormData({
+                      ...contactFormData,
+                      message: e.target.value,
+                    })
+                  }
+                />
+              </div>
+              <Button
+                style={{
+                  fontFamily: "Droid Sans",
+                  background: "#330033",
+                  color: "beige",
+                }}
+                variant="contained"
+                type="submit"
+                className={classes.button}
+              >
+                {t("contactPage.button")}
+              </Button>
+            </form>
+          </Paper>
+        </motion.div>
+        {status === "success" && (
+          <Container>
+            <Alert variant="filled" severity="success">
+              Your message is successfully sent !
+            </Alert>
+          </Container>
+        )}
+        {status === "error" && (
+          <Container fullWidth>
+            <Alert variant="filled" severity="error">
+              There has been a problem ! Please try again later.
+            </Alert>
+          </Container>
+        )}
+      </section>
     </Grow>
   );
 };

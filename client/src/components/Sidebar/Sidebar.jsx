@@ -54,7 +54,7 @@ const Sidebar = () => {
                   className={classes.githubLogo}
                   fontSize="medium"
                   style={{
-                    color: "#EEA47F",
+                    color: "black",
                   }}
                 />
               </a>
