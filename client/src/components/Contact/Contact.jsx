@@ -56,9 +56,7 @@ const Contact = () => {
       setTimeout(() => {
         setStatus("");
       }, 1500);
-      setTimeout(() => {
-        navigate("/");
-      }, 2000);
+      
       dispatch(sendEmail(contactFormData));
     } else {
       setStatus("error");
