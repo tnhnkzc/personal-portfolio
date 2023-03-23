@@ -54,7 +54,7 @@ const Form = ({ currentId, setCurrentId }) => {
     } else {
       dispatch(createProject(projectData));
     }
-    navigate("/projects");
+    navigate("/");
   };
 
   const clear = () => {

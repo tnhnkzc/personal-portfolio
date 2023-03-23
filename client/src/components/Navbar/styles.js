@@ -4,24 +4,22 @@ export default makeStyles((theme) => ({
   appBar: {
     background: "transparent !important",
     width: "100%",
-    height: "150px",
+    height: "120px",
+    position: "fixed !important",
   },
   toolBar: {
-    background: "transparent !important",
+    background: "#EEA47F !important",
     width: "100%",
     height: "150px",
     display: "flex !important",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
   },
   logo: {
-    width: "auto",
-    height: "150px",
+    width: "200px",
     position: "relative",
-    top: "20px",
     [theme.breakpoints.down("sm")]: {
-      width: "auto",
-      height: "100px",
+      width: "125px",
     },
   },
   logoContainer: {
@@ -32,26 +30,28 @@ export default makeStyles((theme) => ({
   },
   navbarLinksContainer: {
     width: "50% !important",
-    height: "150px",
+    height: "120px",
     display: "flex !important",
     flexDirection: "row",
-    justifyContent: "flex-end",
-    [theme.breakpoints.down("xs")]: {
+    justifyContent: "space-evenly",
+    [theme.breakpoints.down("sm")]: {
       visibility: "hidden",
     },
   },
   buttonContainers: {
     width: "33% !important",
   },
-  navbarLinks: {
-    color: "beige !important",
-  },
 
   // Hamburger Menu Styles
 
   hamburgerMenu: {
-    bottom: "5px",
-    [theme.breakpoints.up("sm")]: {
+    right: "20px",
+    [theme.breakpoints.up("md")]: {
+      visibility: "hidden",
+    },
+  },
+  swipeableDrawer: {
+    [theme.breakpoints.up("md")]: {
       visibility: "hidden",
     },
   },
@@ -60,14 +60,17 @@ export default makeStyles((theme) => ({
   },
   chevronIconDiv: {
     width: "100%",
+    background: "#EEA47F !important",
+    color: "black",
   },
   hamburgerMenuContainer: {
     display: "flex !important",
     flexDirection: "column",
     height: "100%",
+    background: "#EEA47F !important",
   },
   hamburgerMenuIcon: {
-    color: "beige",
+    color: "#F96167",
     marginRight: "10px",
   },
   hmbrgMenuUserContainer: {
@@ -79,5 +82,6 @@ export default makeStyles((theme) => ({
     display: "flex !important",
     flexDirection: "column",
     margin: "0",
+    gap: "50px",
   },
 }));

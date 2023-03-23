@@ -7,9 +7,6 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     width: "100% !important",
-    height: "100% !important",
-    marginTop: "200px",
-    textAlign: "center",
   },
   // Entry Message Container Styling
   entryContainer: {
@@ -20,7 +17,6 @@ export default makeStyles((theme) => ({
     width: "100% !important",
   },
   title: {
-    color: "beige",
     textAlign: "center",
     [theme.breakpoints.down("xs")]: {
       fontSize: "36px !important",
@@ -116,11 +112,9 @@ export default makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-  },
-  softSkillsContainer: {
     marginTop: "50px",
   },
-  softSkillsListContainer: {},
+  
   softSkillsList: {
     padding: 0,
   },

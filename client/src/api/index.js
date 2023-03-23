@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "https://personal-portfolio-u11k.onrender.com/" });
+const API = axios.create({
+  baseURL: "https://personal-portfolio-u11k.onrender.com/",
+});
 
 export const fetchProjects = () => API.get("/projects");
 
@@ -15,11 +17,11 @@ export const deleteProject = (id) => API.delete(`/projects/${id}`);
 export const signIn = (formData) => API.post("/auth/signin", formData);
 export const signUp = (formData) => API.post("/auth/signup", formData);
 
-export const sendEmail = (contactFormData, setSend) => {
+export const sendEmail = (contactFormData) => {
   try {
     let res = API.post(`/contact`, contactFormData);
     if (res) {
-      setSend(res.data);
+      return res.data;
     }
   } catch (error) {
     console.log(error);

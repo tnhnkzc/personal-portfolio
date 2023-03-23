@@ -16,8 +16,8 @@
     }
   },
   "aboutMessage": {
-    "part1": "Un ancien professeur d'Anglais qui a décidé de change sa carrière. Né et élevé en Turquie, arrivé en France en Décembre 2020.",
-    "part2": "J'ai commencé à étudier moi-même le développement web fin 2021 et j'ai fait une formation de développement web en Septembre 2022."
+    "part1": "Qui suis je?",
+    "part2": "Je suis un ancien professeur d'Anglais qui voulait changé son métier. J'ai commencé à étudié en auto-didacte. J'aime apprendre des nouvelles choses et je suis toujours curieux sur les avancements de la technologie."
   },
   "languagesMessage": {
     "part1": "Le Développement Front-End",

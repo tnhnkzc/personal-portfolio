@@ -1,49 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Button } from "@mui/material";
-import ArrowUpwardRoundedIcon from "@material-ui/icons/ArrowUpwardRounded";
+import { Link } from "react-scroll";
+import { ArrowUpCircle } from "lucide-react";
 
 function ScrollToTop() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleVisibility = () => {
-    const currentPageY = window.scrollY;
-    if (currentPageY > 10) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleVisibility);
-
-    return () => {
-      window.removeEventListener("scroll", handleVisibility);
-    };
-  });
-
-  const scrollToTop = () => {
-    window.scroll({ top: 0, behavior: "smooth" });
-  };
-
-  return isVisible ? (
+  return (
     <Container
+      className="fixed bottom-10 right-0 md:right-10 !w-9 flex justify-center items-center z-10"
       style={{
         transitionTimingFunction: "ease-in",
         transition: "1.2s",
         animationDelay: "1.2s",
       }}
     >
-      <Button
-        style={{
-          float: "right",
-          color: "#ffcc00",
-        }}
-      >
-        <ArrowUpwardRoundedIcon onClick={scrollToTop} />
-      </Button>
+      <Link to="home" duration={750} smooth={true}>
+        <Button
+          style={{
+            float: "right",
+            color: "#ffcc00",
+          }}
+          className="border-2 border-black rounded"
+        >
+          <ArrowUpCircle className="text-black md:block" size={36} />
+        </Button>
+      </Link>
     </Container>
-  ) : null;
+  );
 }
 
 export default ScrollToTop;

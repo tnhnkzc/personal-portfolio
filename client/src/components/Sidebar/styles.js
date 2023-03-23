@@ -10,10 +10,10 @@ export default makeStyles((theme) => ({
     width: "auto !important",
     borderRadius: "10px",
     [theme.breakpoints.down("xs")]: {
-      marginTop: "250px",
+      marginTop: "550px",
       width: "50px !important",
     },
-    [theme.breakpoints.up("xs")]: {
+    [theme.breakpoints.up("md")]: {
       marginTop: "250px",
       width: "50px !important",
     },

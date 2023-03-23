@@ -25,7 +25,7 @@ const Projects = ({ setCurrentId }) => {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Droid Sans", "Chilanka", "Grape Nuts"],
+        families: ["Droid Sans", "Rubik Glitch", "Comfortaa"],
       },
     });
   }, []);
@@ -36,41 +36,39 @@ const Projects = ({ setCurrentId }) => {
     <CircularProgress className={classes.circularProgress} />
   ) : (
     <>
-      <Grow in>
-        <Container className={classes.projectsContainer}>
+      <Grow in id="projects">
+        <section className="h-auto md:h-auto flex flex-col items-center justify-between p-2">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <Container className={classes.titleContainer}>
+            <Container className="text-center ">
               <Typography
                 variant="h3"
-                className={classes.title}
-                style={{ fontFamily: "Chilanka" }}
+                className="text-black"
+                style={{ fontFamily: "Comfortaa" }}
               >
                 {t("projectsPage.title")}
               </Typography>
-              <Container className={classes.container} container>
-                {user && (
-                  <Button
-                    className={classes.addButton}
-                    variant="contained"
-                    style={{
-                      background: "#330033",
-                    }}
+              {user && (
+                <Button
+                  className={classes.addButton}
+                  variant="contained"
+                  style={{
+                    background: "#330033",
+                  }}
+                >
+                  <Typography
+                    component={Link}
+                    to="/projects/createProject"
+                    className={classes.addButtonText}
+                    style={{ fontFamily: "Droid Sans", color: "beige" }}
                   >
-                    <Typography
-                      component={Link}
-                      to="/projects/createProject"
-                      className={classes.addButtonText}
-                      style={{ fontFamily: "Droid Sans", color: "beige" }}
-                    >
-                      Add a Project
-                    </Typography>
-                  </Button>
-                )}
-              </Container>
+                    Add a Project
+                  </Typography>
+                </Button>
+              )}
             </Container>
           </motion.div>
           <motion.div
@@ -78,24 +76,21 @@ const Projects = ({ setCurrentId }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <Grid
-              className={classes.projectsGrid}
-              container
-              justify="space-between"
-              alignItems="stretch"
-              spacing={6}
-              sm={12}
-            >
+            <Grid container spacing={1}>
               {projects.map((project) => {
                 return (
-                  <Grid key={project._id} item xs={12} sm={6}>
-                    <Project setCurrentId={setCurrentId} project={project} />
+                  <Grid key={project._id} item xs={12} sm={6} md={3}>
+                    <Project
+                      key={project._id}
+                      setCurrentId={setCurrentId}
+                      project={project}
+                    />
                   </Grid>
                 );
               })}
             </Grid>
           </motion.div>
-        </Container>
+        </section>
       </Grow>
     </>
   );

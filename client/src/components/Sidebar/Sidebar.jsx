@@ -54,9 +54,7 @@ const Sidebar = () => {
                   className={classes.githubLogo}
                   fontSize="medium"
                   style={{
-                    color: "beige",
-                    marginBottom: "10px",
-                    marginTop: "10px",
+                    color: "black",
                   }}
                 />
               </a>
@@ -83,7 +81,7 @@ const Sidebar = () => {
                 <LinkedInIcon
                   className={classes.linkedinLogo}
                   style={{
-                    color: "beige",
+                    color: "black",
                   }}
                 />
               </a>
@@ -110,7 +108,7 @@ const Sidebar = () => {
               >
                 <PictureAsPdfIcon
                   style={{
-                    color: "beige",
+                    color: "black",
                   }}
                   className={classes.cvLogo}
                 />

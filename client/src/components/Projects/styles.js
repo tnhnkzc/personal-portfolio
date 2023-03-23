@@ -17,14 +17,10 @@ export default makeStyles((theme) => ({
   titleContainer: {
     display: "flex !important",
     flexWrap: "wrap",
-    marginTop: "150px",
     justifyContent: "center",
-    marginBottom: "25px",
     [theme.breakpoints.down("xs")]: {
       marginTop: "150px",
     },
   },
-  projectsContainer: {
-    marginBottom: "150px",
-  },
+  
 }));

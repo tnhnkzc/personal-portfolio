@@ -37,48 +37,39 @@ const Project = ({ project, setCurrentId }) => {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Droid Sans", "Chilanka", "Grape Nuts"],
+        families: ["Droid Sans", "Comfortaa", "Montserrat"],
       },
     });
   }, []);
 
   return (
-    <Card className={classes.mainContainer}>
+    <Card className="mb-3">
       <CardMedia className={classes.media} image={project.selectedFile} />
-      <CardContent
-        style={{
-          background: "#330033",
-        }}
-      >
+      <CardContent className="bg-red-400 h-72">
         <Typography
           className={classes.projectTitle}
-          style={{ fontFamily: "Chilanka", color: "beige" }}
+          style={{ fontFamily: "Comfortaa", color: "beige" }}
           variant="h3"
           color="textPrimary"
         >
           {project.title}
         </Typography>
         <Typography
-          style={{ fontFamily: "Droid Sans", color: "beige" }}
+          style={{ fontFamily: "Montserrat", color: "beige" }}
           variant="body1"
           color="white"
         >
           Description: {project.description}
         </Typography>
         <Typography
-          style={{ fontFamily: "Droid Sans", color: "beige" }}
+          style={{ fontFamily: "Montserrat", color: "beige" }}
           variant="body1"
           color="white"
         >
           Tools: {project.tools}
         </Typography>
       </CardContent>
-      <CardActions
-        className={classes.cardActions}
-        style={{
-          background: "#330033",
-        }}
-      >
+      <CardActions className="bg-red-400 flex justify-end gap-3 h-6">
         {user && (
           <Button
             id="editButton"

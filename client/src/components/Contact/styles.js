@@ -7,19 +7,18 @@ export default makeStyles((theme) => ({
     },
   },
   formContainer: {
-    marginTop: "75px",
-    backgroundColor: "beige",
+    backgroundColor: "#EEA47F",
+    padding: "10px",
+    borderRadius: "15px",
   },
 
   textField: {
     marginBottom: "10px",
   },
-  form: {
-    padding: "10px",
-  },
+
   formTitle: {
-    color: "beige",
-    marginTop: "150px",
+    color: "black",
+    marginTop: "100px",
     textAlign: "center",
     [theme.breakpoints.down("sm")]: {
       fontSize: "36px !important",
@@ -28,13 +27,12 @@ export default makeStyles((theme) => ({
   textArea: {
     width: "100% !important",
     marginBottom: "10px",
-    color: "white",
     [theme.breakpoints.down("xs")]: {
       width: "100% !important",
     },
   },
-
-  placeholder: {
-    color: "white",
+  button: {
+    background: "#8aaae5 !important",
+    color: "black !important",
   },
 }));
