@@ -29,9 +29,9 @@ const Project = ({ project, setCurrentId }) => {
   const handleMouseLeave = () => {
     setMouseOver(false);
   };
-  const handleDelete = () => {
+  const handleDelete = (e) => {
+    e.preventDefault();
     dispatch(deleteProject(project._id));
-    window.location.reload();
   };
 
   useEffect(() => {
@@ -74,7 +74,8 @@ const Project = ({ project, setCurrentId }) => {
           <Button
             id="editButton"
             onClick={() => {
-              setCurrentId(project._id);
+              console.log(project._id);
+              setCurrentId(project.id);
               navigate(`/projects/editProject/${project._id}`);
             }}
             onMouseEnter={handleMouseEnter}
