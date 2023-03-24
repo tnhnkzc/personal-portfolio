@@ -88,7 +88,7 @@ const Contact = () => {
           >
             {t("contactPage.title")}
           </Typography>
-          <div className="flex w-full items-center justify-center ">
+          <div className="flex w-full md:items-center md:justify-center justify-center gap-4">
             <motion.button
               style={{
                 background: "transparent",
