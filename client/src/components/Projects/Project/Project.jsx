@@ -48,7 +48,7 @@ const Project = ({ project, setCurrentId }) => {
         <Typography
           className={classes.projectTitle}
           style={{ fontFamily: "Comfortaa", color: "beige" }}
-          variant="h3"
+          variant="h4"
           color="textPrimary"
         >
           {project.title}
@@ -58,14 +58,14 @@ const Project = ({ project, setCurrentId }) => {
           variant="body1"
           color="white"
         >
-          Description: {project.description}
+          <span className="font-bold">Description: </span>{project.description}
         </Typography>
         <Typography
           style={{ fontFamily: "Montserrat", color: "beige" }}
           variant="body1"
           color="white"
         >
-          Tools: {project.tools}
+          <span className="font-bold">Tools: </span> {project.tools}
         </Typography>
       </CardContent>
       <CardActions className="bg-red-400 flex justify-end gap-3 h-6">
@@ -92,25 +92,28 @@ const Project = ({ project, setCurrentId }) => {
             Delete
           </Button>
         )}
-
-        <a
-          className={classes.gitHub}
-          target="_blank"
-          href={project.gitHubRepo}
-          rel="noreferrer"
-          style={{ color: "beige" }}
-        >
-          <GitHubIcon />
-        </a>
-        <a
-          className={classes.siteLink}
-          target="_blank"
-          href={project.siteLink}
-          rel="noreferrer"
-          style={{ color: "beige" }}
-        >
-          <LaunchIcon />
-        </a>
+        {project.gitHubRepo && (
+          <a
+            className={classes.gitHub}
+            target="_blank"
+            href={project.gitHubRepo}
+            rel="noreferrer"
+            style={{ color: "beige" }}
+          >
+            <GitHubIcon />
+          </a>
+        )}
+        {project.siteLink && (
+          <a
+            className={classes.siteLink}
+            target="_blank"
+            href={project.siteLink}
+            rel="noreferrer"
+            style={{ color: "beige" }}
+          >
+            <LaunchIcon />
+          </a>
+        )}
       </CardActions>
     </Card>
   );
