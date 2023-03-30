@@ -9,11 +9,11 @@ import {
   Grid,
   Button,
   Typography,
-  CircularProgress,
 } from "@mui/material";
 import useStyles from "./styles";
 import WebFont from "webfontloader";
 import { motion } from "framer-motion";
+import LoadingSpinner from "../Loading/LoadingSpinner";
 
 const Projects = ({ setCurrentId }) => {
   const projects = useSelector((state) => {
@@ -33,7 +33,7 @@ const Projects = ({ setCurrentId }) => {
   const { t } = useTranslation();
 
   return !projects.length ? (
-    <CircularProgress className={classes.circularProgress} />
+    <LoadingSpinner />
   ) : (
     <>
       <Grow in id="projects">
