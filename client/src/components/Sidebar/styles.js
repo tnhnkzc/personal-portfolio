@@ -9,13 +9,16 @@ export default makeStyles((theme) => ({
     flexWrap: "wrap",
     width: "auto !important",
     borderRadius: "10px",
+    zIndex: "10",
     [theme.breakpoints.down("xs")]: {
       marginTop: "550px",
       width: "50px !important",
+      zIndex: "10",
     },
     [theme.breakpoints.up("md")]: {
       marginTop: "250px",
       width: "50px !important",
+      zIndex: "10",
     },
     transitionTimingFunction: "ease-in",
     transition: "1.2s",
